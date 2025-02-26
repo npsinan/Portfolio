@@ -315,6 +315,10 @@
         font-size: 14px;
     }
 
+    .container-inner,
+    .single-resume {
+        padding: 20px;
+    }
 
 }
 
