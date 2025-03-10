@@ -373,7 +373,6 @@
   });
   /*END MAP JS*/
 })(window.jQuery);
-
 document
   .getElementById("contactForm")
   .addEventListener("submit", function (event) {
@@ -392,10 +391,10 @@ document
     }
 
     let whatsappMessage = `Hello ${name}, ${message}`;
-    let whatsappURL = `https://wa.me/7306486249?text=${encodeURIComponent(
+
+    let whatsappURL = `https://wa.me/971564726984?text=${encodeURIComponent(
       whatsappMessage
     )}`;
 
-    // Open WhatsApp in a new tab
     window.open(whatsappURL, "_blank");
   });
