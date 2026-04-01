@@ -860,35 +860,42 @@
 @media only screen and (max-width: 991px) {
     .main-menu .navbar-collapse>ul {
         display: block;
-        padding: 25px 0;
+        padding: 12px;
         overflow-x: hidden;
-        background: #333;
+        background: #fff;
+        border: 1px solid rgba(119, 119, 125, .14);
+        border-radius: 20px;
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
         max-height: calc(100vh - 100px);
     }
 
     .main-menu .navbar-collapse>ul>li:last-child {
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: none;
     }
 }
 
 @media only screen and (max-width: 991px) {
     .main-menu .navbar-collapse {
-        left: 45%;
-        width: 50%;
+        left: 0;
+        top: calc(100% + 14px);
+        width: 100%;
         position: absolute;
+        z-index: 99;
     }
 }
 
 @media only screen and (max-width: 991px) {
     .main-menu .navbar-collapse li.dropdown .dropdown-btn {
         position: absolute;
-        right: 10px;
-        top: 0;
-        width: 50px;
-        height: 43px;
-        border-left: 1px solid var(--border-color);
+        right: 14px;
+        top: 8px;
+        width: 40px;
+        height: 40px;
+        background: rgba(243, 157, 27, 0.12);
+        border-radius: 10px;
         text-align: center;
-        line-height: 43px;
+        line-height: 40px;
+        color: var(--primary-color);
     }
 }
 
@@ -902,17 +909,40 @@
 @media only screen and (max-width: 991px) {
     .main-menu .navbar-collapse li {
         display: block;
-        padding: 0 15px;
+        padding: 0;
         border-top: 1px solid var(--border-color);
     }
 }
 
 @media only screen and (max-width: 991px) {
     .main-menu .navbar-collapse li a {
-        padding: 10px 10px;
+        padding: 12px 14px;
         line-height: 22px;
-        color: #fff;
-        opacity: .7;
+        color: var(--heading-color);
+        opacity: 1;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+
+    .main-menu .navbar-collapse li:first-child {
+        border-top: none;
+    }
+
+    .main-menu .navbar-header .navbar-toggle {
+        background: var(--primary-color);
+        border-radius: 14px;
+        padding: 10px 12px;
+        box-shadow: 0 12px 24px rgba(243, 157, 27, 0.24);
+    }
+
+    .main-menu .navbar-header .navbar-toggle .icon-bar {
+        background: #fff;
+    }
+
+    .main-menu .navbar-collapse li a:hover,
+    .fixed-header .main-menu .navbar-collapse li a:hover {
+        color: var(--primary-color);
+        background: rgba(243, 157, 27, 0.12);
     }
 }
 
