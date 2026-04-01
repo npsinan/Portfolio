@@ -1311,6 +1311,15 @@ html {
     letter-spacing: 0.5px;
 }
 
+.about-content-part h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.08;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+}
+
 .about-content-part h2 span {
     -webkit-text-stroke: 1px #000;
     color: transparent;
