@@ -1,12 +1,14 @@
+import { assetUrl } from "../utils/assetUrl";
+
 const skills = [
-  { image: "/assets/images/skills/skill1.png", label: "JavaScript" },
-  { image: "/assets/images/skills/skill2.png", label: "Illustrator" },
-  { image: "/assets/images/skills/skill3.png", label: "Photoshop" },
-  { image: "/assets/images/skills/skill4.png", label: "CSS" },
-  { image: "/assets/images/skills/skill5.png", label: "HTML" },
-  { image: "/assets/images/skills/skill6.png", label: "jQuery" },
-  { image: "/assets/images/skills/skill7.png", label: "React JS" },
-  { image: "/assets/images/skills/skill8.png", label: "Figma" }
+  { image: "assets/images/skills/skill1.png", label: "JavaScript" },
+  { image: "assets/images/skills/skill2.png", label: "Illustrator" },
+  { image: "assets/images/skills/skill3.png", label: "Photoshop" },
+  { image: "assets/images/skills/skill4.png", label: "CSS" },
+  { image: "assets/images/skills/skill5.png", label: "HTML" },
+  { image: "assets/images/skills/skill6.png", label: "jQuery" },
+  { image: "assets/images/skills/skill7.png", label: "React JS" },
+  { image: "assets/images/skills/skill8.png", label: "Figma" }
 ];
 
 function Skills() {
@@ -25,7 +27,7 @@ function Skills() {
           {skills.map((skill, idx) => (
             <div className="col-lg-3 col-sm-6 col-xs-12" key={skill.label}>
               <div className={`skill-item wow fadeInUp delay-0-${(idx % 4) + 2}s`}>
-                <img src={skill.image} alt={skill.label} />
+                <img src={assetUrl(skill.image)} alt={skill.label} />
                 <h5>{skill.label}</h5>
               </div>
             </div>

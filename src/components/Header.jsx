@@ -1,3 +1,5 @@
+import { assetUrl, siteRootUrl } from "../utils/assetUrl";
+
 const navItems = [
   { href: "#about", label: "About" },
   { href: "#service", label: "Services" },
@@ -13,8 +15,8 @@ function Header() {
           <div className="header-inner d-flex align-items-center">
             <div className="logo-outer">
               <div className="logo">
-                <a href="/">
-                  <img src="/assets/images/logo.png" alt="Sinan NP Logo" title="Sinan NP Portfolio" />
+                <a href={siteRootUrl}>
+                  <img src={assetUrl("assets/images/logo.png")} alt="Sinan NP Logo" title="Sinan NP Portfolio" />
                 </a>
               </div>
             </div>
@@ -23,8 +25,8 @@ function Header() {
               <nav className="main-menu navbar-expand-lg">
                 <div className="navbar-header">
                   <div className="mobile-logo">
-                    <a href="/">
-                      <img src="/assets/images/logo.png" alt="Sinan NP Logo Mobile" />
+                    <a href={siteRootUrl}>
+                      <img src={assetUrl("assets/images/logo.png")} alt="Sinan NP Logo Mobile" />
                     </a>
                   </div>
                   <button type="button" className="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">

@@ -1,44 +1,46 @@
+import { assetUrl } from "../utils/assetUrl";
+
 const projects = [
   {
-    image: "/assets/images/projects/work1.jpg",
+    image: "assets/images/projects/work1.jpg",
     title: "Modern Online Course Learning Platform",
     subTitle: "Website Development",
     href: "https://npsinan.github.io/internsglobal/",
     classes: "item branding game"
   },
   {
-    image: "/assets/images/projects/work2.jpg",
+    image: "assets/images/projects/work2.jpg",
     title: "Professional Product Package Design",
     subTitle: "Graphic Design",
-    href: "/assets/images/projects/work2.jpg",
+    href: "assets/images/projects/work2.jpg",
     classes: "item design marketing graphics"
   },
   {
-    image: "/assets/images/projects/work3.jpg",
+    image: "assets/images/projects/work3.jpg",
     title: "Business Auditing Services Website",
     subTitle: "Corporate Website",
     href: "https://www.bmsaglobal.com",
     classes: "item game branding"
   },
   {
-    image: "/assets/images/projects/work4.jpg",
+    image: "assets/images/projects/work4.jpg",
     title: "Creative Book Cover Design",
     subTitle: "Print Design",
-    href: "/assets/images/projects/work4.jpg",
+    href: "assets/images/projects/work4.jpg",
     classes: "item design game"
   },
   {
-    image: "/assets/images/projects/work5.jpg",
+    image: "assets/images/projects/work5.jpg",
     title: "Complete E-Commerce Shopping Platform",
     subTitle: "E-Commerce Development",
     href: "https://npsinan.github.io/E-commerce-Website/main.html",
     classes: "item branding game"
   },
   {
-    image: "/assets/images/projects/work6.jpg",
+    image: "assets/images/projects/work6.jpg",
     title: "Custom Website Development Design",
     subTitle: "Web Design",
-    href: "/assets/images/projects/work6.jpg",
+    href: "assets/images/projects/work6.jpg",
     classes: "item design marketing graphics"
   }
 ];
@@ -68,8 +70,13 @@ function Projects() {
               <div className={`col-lg-4 col-md-6 ${project.classes}`} key={project.title}>
                 <div className={`project-item style-two wow fadeInUp delay-0-${idx + 3}s`}>
                   <div className="project-image">
-                    <img src={project.image} alt={project.title} />
-                    <a href={project.href} className="details-btn work-popup" target="_blank" rel="noreferrer">
+                    <img src={assetUrl(project.image)} alt={project.title} />
+                    <a
+                      href={project.href.startsWith("http") ? project.href : assetUrl(project.href)}
+                      className="details-btn work-popup"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <i className="ri-arrow-right-up-line" />
                     </a>
                   </div>

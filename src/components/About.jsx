@@ -1,3 +1,5 @@
+import { assetUrl } from "../utils/assetUrl";
+
 const socialLinks = [
   { href: "https://www.behance.net/sinannp", icon: "ri-behance-fill", label: "Behance" },
   { href: "https://www.linkedin.com/in/sinan-np-4611b91a9/", icon: "ri-linkedin-fill", label: "LinkedIn" },
@@ -12,7 +14,7 @@ function About() {
           <div className="col-lg-4">
             <div className="about-image-part wow fadeInUp delay-0-3s">
               <div className="about-image-part2">
-                <img src="/assets/images/about/me.jpg" alt="Sinan NP" />
+                <img src={assetUrl("assets/images/about/me.jpg")} alt="Sinan NP" />
               </div>
               <h2>Sinan NP</h2>
               <p>Professional Frontend Developer and UI/UX Designer specializing in React JS and modern web technologies.</p>
@@ -33,10 +35,7 @@ function About() {
           <div className="col-lg-8">
             <div className="about-content-part wow fadeInUp delay-0-2s">
               <p>Hello There!</p>
-              <h1>
-                I&apos;m <span>Sinan NP</span>, an expert frontend developer crafting <span>pixel-perfect web experiences</span> with modern
-                React and JavaScript.
-              </h1>
+              <h1>Graphic designer, UI/UX specialist, and frontend developer with a focus on React JS and modern web technologies.</h1>
               <div className="adress-field">
                 <ul>
                   <li>
@@ -46,7 +45,7 @@ function About() {
                 </ul>
               </div>
               <div className="hero-btns">
-                <a href="/assets/cv/Sinan_N_P.pdf" download="Sinan_N_P.pdf" className="theme-btn1">
+                <a href={assetUrl("assets/cv/Sinan_N_P.pdf")} download="Sinan_N_P.pdf" className="theme-btn1">
                   Download CV <i className="ri-download-line" />
                 </a>
               </div>

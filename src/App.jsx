@@ -7,37 +7,62 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
+import { assetUrl } from "./utils/assetUrl";
 
 const scriptSources = [
-  "/assets/js/jquery-3.7.1.min.js",
-  "/assets/js/bootstrap.min.js",
-  "/assets/js/appear.min.js",
-  "/assets/js/smooth-scroll.js",
-  "/assets/js/gsap.min.js",
-  "/assets/js/jquery.magnific-popup.min.js",
-  "/assets/js/slick.min.js",
-  "/assets/js/jquery.nice-select.min.js",
-  "/assets/js/imagesloaded.pkgd.min.js",
-  "/assets/js/isotope.pkgd.min.js",
-  "/assets/js/wow.min.js",
-  "/assets/js/script.js"
-];
+  "assets/js/jquery-3.7.1.min.js",
+  "assets/js/bootstrap.min.js",
+  "assets/js/appear.min.js",
+  "assets/js/smooth-scroll.js",
+  "assets/js/gsap.min.js",
+  "assets/js/jquery.magnific-popup.min.js",
+  "assets/js/slick.min.js",
+  "assets/js/jquery.nice-select.min.js",
+  "assets/js/imagesloaded.pkgd.min.js",
+  "assets/js/isotope.pkgd.min.js",
+  "assets/js/wow.min.js",
+  "assets/js/script.js"
+].map(assetUrl);
 
 function App() {
   useEffect(() => {
     const scripts = [];
+    let isCancelled = false;
 
     const loadScripts = async () => {
       for (const src of scriptSources) {
+        if (isCancelled) {
+          return;
+        }
+
+        const existingScript = document.querySelector(`script[data-portfolio-script="${src}"]`);
+
+        if (existingScript) {
+          if (existingScript.dataset.loaded === "true") {
+            continue;
+          }
+
+          await new Promise((resolve) => {
+            existingScript.addEventListener("load", resolve, { once: true });
+            existingScript.addEventListener("error", resolve, { once: true });
+          });
+          continue;
+        }
+
         const script = document.createElement("script");
         script.src = src;
         script.async = false;
         script.defer = false;
+        script.dataset.portfolioScript = src;
         scripts.push(script);
-        document.body.appendChild(script);
+
         await new Promise((resolve) => {
-          script.onload = resolve;
+          script.onload = () => {
+            script.dataset.loaded = "true";
+            resolve();
+          };
           script.onerror = resolve;
+          document.body.appendChild(script);
         });
       }
     };
@@ -45,6 +70,7 @@ function App() {
     loadScripts();
 
     return () => {
+      isCancelled = true;
       scripts.forEach((script) => script.remove());
     };
   }, []);
