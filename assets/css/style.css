@@ -459,6 +459,18 @@ html {
     outline: 0;
 }
 
+.theme-btn-behance {
+    background: #1769ff;
+    border-color: #1769ff;
+    color: #fff;
+}
+
+.theme-btn-behance:hover {
+    background: #0057ff;
+    border-color: #0057ff;
+    color: #fff;
+}
+
 
 .details-btn {
     width: 50px;
@@ -1101,6 +1113,9 @@ html {
 
 .hero-btns {
     margin-top: 30px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .hero-content .hero-btns .read-more {

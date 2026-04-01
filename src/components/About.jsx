@@ -78,6 +78,14 @@ function About() {
                 >
                   Download CV <i className="ri-download-line" />
                 </a>
+                <a
+                  href="https://www.behance.net/gallery/198847597/Graphic-Design-Portfolio"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="theme-btn1 theme-btn-behance"
+                >
+                  Behance Portfolio <i className="ri-behance-fill" />
+                </a>
               </div>
             </div>
             <div className="about-content-part-bottom wow fadeInUp delay-0-2s">
