@@ -20,6 +20,17 @@
 <body>
   <div id="root"></div>
   <script type="module" src="./src/main.jsx"></script>
+  <script>
+    (function () {
+      const isGitHubPages = window.location.hostname.endsWith(".github.io");
+      const hasSourceEntry = Boolean(document.querySelector('script[type="module"][src="./src/main.jsx"]'));
+      const alreadyInDocs = /\/docs\/?$/.test(window.location.pathname);
+
+      if (isGitHubPages && hasSourceEntry && !alreadyInDocs) {
+        window.location.replace(new URL("./docs/", window.location.href));
+      }
+    })();
+  </script>
 </body>
 
 </html>
