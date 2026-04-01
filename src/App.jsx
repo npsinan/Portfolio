@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "./components/Header";
 import About from "./components/About";
+import BubbleBackdrop from "./components/BubbleBackdrop";
 import Services from "./components/Services";
 import Resume from "./components/Resume";
 import Skills from "./components/Skills";
@@ -76,22 +77,25 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Header />
-      <About />
-      <Services />
-      <Resume />
-      <Skills />
-      <Projects />
-      <Testimonials />
-      <Contact />
-      <div className="progress-wrap cursor-pointer">
-        <i className="ri-arrow-up-double-line" />
-        <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
+    <div className="portfolio-shell">
+      <BubbleBackdrop />
+      <div className="portfolio-content">
+        <Header />
+        <About />
+        <Services />
+        <Resume />
+        <Skills />
+        <Projects />
+        <Testimonials />
+        <Contact />
+        <div className="progress-wrap cursor-pointer">
+          <i className="ri-arrow-up-double-line" />
+          <svg className="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+          </svg>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
