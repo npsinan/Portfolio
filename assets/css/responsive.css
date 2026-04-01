@@ -280,7 +280,8 @@
     }
 
     .fixed-header .main-menu .navbar-collapse li a {
-        color: #fff;
+        color: var(--heading-color);
+        opacity: 1;
     }
 
     .fixed-header .main-menu .navbar-collapse li a:hover {
